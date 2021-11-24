@@ -1,0 +1,47 @@
+﻿<Application
+    RequestedTheme="Dark"
+    x:Class="Video_Chopper.App"
+    xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <!-- App Resources -->
+    <Application.Resources>
+        <!-- Main Grid Style -->
+        <Style x:Key="MainGridStyle" TargetType="Grid">
+            <Setter Property="RowSpacing" Value="30"/>
+            <Setter Property="ColumnSpacing" Value="30"/>
+            <Setter Property="Background" Value="#333333"/>
+        </Style>
+
+        <!-- Interval Input Box Style -->
+        <Style x:Key="TimeInputBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="ui:TextBoxExtensions.Mask" Value="99:99:99"/>
+            <Setter Property="ui:TextBoxExtensions.MaskPlaceholder" Value="00:00:00"/>
+        </Style>
+
+        <!-- Interval Text Block Style -->
+        <Style x:Key="TextLabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Padding" Value="0 0 0 5"/>
+        </Style>
+        
+        <!-- Info Text Block Style -->
+        <Style x:Key="TextInfoStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+
+        <!-- Button Style -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="CornerRadius" Value="3"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="White"/>
+        </Style>
+    </Application.Resources>
+
+</Application>

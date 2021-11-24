@@ -1,0 +1,188 @@
+﻿<Page
+    mc:Ignorable="d"
+    x:Class="Video_Chopper.InfoPage"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <!-- Video Chopper Info Page -->
+    <Grid RowSpacing="0"
+          Style="{ThemeResource MainGridStyle}">
+
+        <!-- Grid Row Settings -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Text="Information"
+                   Grid.Row="0"
+                   FontSize="40"
+                   FontWeight="Bold"
+                   Padding="10 0 0 0"
+                   Foreground="White"/>
+
+        <!-- Information Field -->
+        <Grid Grid.Row="1"
+              CornerRadius="2"
+              Padding="5 3 5 3"
+              Margin="10 0 10 0"
+              Background="White">
+
+            <!-- Grid Row Field Settings -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Application Name -->
+            <StackPanel Grid.Row="0"
+                        Orientation="Horizontal">
+
+                <TextBlock Text="Name:"
+                           FontWeight="Bold"
+                           Style="{ThemeResource TextInfoStyle}"/>
+
+                <TextBlock x:Name="Name"
+                           Margin="5 0 0 0"
+                           Style="{ThemeResource TextInfoStyle}"/>
+
+            </StackPanel>
+
+            <!-- Application Version -->
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal">
+
+                <TextBlock Text="Version:"
+                           FontWeight="Bold"
+                           Style="{ThemeResource TextInfoStyle}"/>
+
+                <TextBlock x:Name="Version"
+                           Margin="5 0 0 0"
+                           Style="{ThemeResource TextInfoStyle}"/>
+
+            </StackPanel>
+
+            <!-- Application Publisher -->
+            <StackPanel Grid.Row="2"
+                        Orientation="Horizontal">
+
+                <TextBlock Text="Publisher:"
+                           FontWeight="Bold"
+                           Style="{ThemeResource TextInfoStyle}"/>
+
+                <TextBlock Margin="5 0 0 0"
+                           x:Name="Publisher"
+                           Style="{ThemeResource TextInfoStyle}"/>
+
+            </StackPanel>
+
+            <!-- Description -->
+            <Grid Grid.Row="3">
+
+                <!-- Grid Column Description Settings -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Description:"
+                           FontWeight="Bold"
+                           Grid.Column="0"
+                           Style="{ThemeResource TextInfoStyle}"/>
+
+                <TextBlock Grid.Column="1"
+                           Margin="5 0 0 0"
+                           x:Name="Description"
+                           TextAlignment="Justify"
+                           TextWrapping="WrapWholeWords"
+                           Style="{ThemeResource TextInfoStyle}"/>
+
+            </Grid>
+
+            <!-- Line -->
+            <Rectangle Grid.Row="4"
+                       Height="5"
+                       Width="Auto"
+                       RadiusX="3"
+                       RadiusY="3"
+                       Margin="5 10 5 10"
+                       Fill="#333333">
+            </Rectangle>
+
+            <!-- Contacts -->
+            <Grid Grid.Row="5">
+
+                <!-- Grid Contacts Colmn Settings -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- LinkedIn Button -->
+                <Button Grid.Column="0"
+                        x:Name="LinkenIn"
+                        Click="LinkenIn_Click"
+                        Background="Transparent"
+                        HorizontalAlignment="Right"
+                        PointerExited="MouseExited"
+                        PointerEntered="MouseEntered">
+
+                    <StackPanel>
+                        <Image Width="100"
+                               Height="100"
+                               Source="Assets/linkedin_logo.png"/>
+                        <TextBlock Text="LinkedIn"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Style="{ThemeResource TextInfoStyle}"/>
+                    </StackPanel>
+
+                </Button>
+
+                <!-- GitHub Button -->
+                <Button Grid.Column="1"
+                        x:Name="GitHub"
+                        Click="GitHub_Click"
+                        Background="Transparent"
+                        HorizontalAlignment="Left"
+                        PointerExited="MouseExited"
+                        PointerEntered="MouseEntered">
+
+                    <StackPanel>
+                        <Image Width="100"
+                               Height="100"
+                               Source="Assets/github_logo.png"/>
+                        <TextBlock Text="GitHub"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Style="{ThemeResource TextInfoStyle}"/>
+                    </StackPanel>
+
+                </Button>
+            </Grid>
+
+        </Grid>
+
+        <!-- Back Button -->
+        <Button Grid.Row="2"
+                x:Name="Back"
+                Content="Back"
+                Click="Back_Click"
+                Margin="10 10 10 10"
+                Padding="70 15 70 15"
+                HorizontalAlignment="Center"
+                PointerExited="MouseExited"
+                PointerEntered="MouseEntered"
+                Style="{ThemeResource ButtonStyle}"/>
+
+    </Grid>
+</Page>
