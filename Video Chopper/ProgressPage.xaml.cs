@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using Windows.Storage;
+using System.Threading.Tasks;
 
 using Windows.UI;
 using Windows.UI.Core;
@@ -35,13 +37,15 @@ namespace Video_Chopper
             if (percent == 100) ButtonVisibility();
         }
 
-        private void Stop_Click(object sender, RoutedEventArgs e)
+        private async void Stop_Click(object sender, RoutedEventArgs e)
         {
             trim.Stop();
             ButtonVisibility();
             ProgressBar.Value = 100;
             Percentage.Text = "Stopped";
             ProgressBar.Foreground = new SolidColorBrush(Colors.Salmon);
+
+            await fileData.Output.DeleteAsync(StorageDeleteOption.PermanentDelete);
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

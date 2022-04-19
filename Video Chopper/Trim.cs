@@ -33,10 +33,15 @@ namespace Video_Chopper
             {
                 TrimStopTime = fileData.End,
                 TrimStartTime = fileData.Start,
-                VideoProcessingAlgorithm = MediaVideoProcessingAlgorithm.MrfCrf444
+                VideoProcessingAlgorithm = MediaVideoProcessingAlgorithm.Default
             };
 
             profile = MediaEncodingProfile.CreateMp4(fileData.Quality);
+
+            profile.Video.Bitrate = fileData.VideoBitrate;
+            profile.Video.FrameRate.Numerator = fileData.FrameRateNumerator;
+            profile.Video.FrameRate.Denominator = fileData.FrameRateDominator;
+
             cancellation = new CancellationTokenSource();
 
             result = await transcoder.PrepareFileTranscodeAsync(fileData.Intpu, fileData.Output, profile);
